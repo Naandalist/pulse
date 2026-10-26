@@ -1,5 +1,5 @@
 [Unit]
-Description=Pulse - tiny HTTP ping target for Uptime Kuma
+Description=Pulse - tiny HTTP ping target for uptime monitoring
 After=network-online.target
 Wants=network-online.target
 

@@ -1,6 +1,8 @@
 # pulse
 
-A super tiny HTTP webserver that answers `200 ok` for Uptime Kuma to ping, so a
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
+
+Super tiny HTTP webserver that answers `200 ok` for a monitor to ping, so a
 VPS stays awake. One file `main.rs`, no per-request logging, no `Server` header,
 and it leaks no hostname, version, or client IP.
 
@@ -18,10 +20,10 @@ and it leaks no hostname, version, or client IP.
 
 ## Configuration (env)
 
-| Env              | Default   | Description                                            |
-| ---------------- | --------- | ------------------------------------------------------ |
-| `PORT`           | `8080`    | Port to listen on, bound to `0.0.0.0`.                 |
-| `HEALTH_PATH`    | `/health` | Health check path. A missing leading `/` is added automatically. |
+| Env              | Default   | Description                                                                                                              |
+| ---------------- | --------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `PORT`           | `8080`    | Port to listen on, bound to `0.0.0.0`.                                                                                   |
+| `HEALTH_PATH`    | `/health` | Health check path. A missing leading `/` is added automatically.                                                         |
 | `RATE_LIMIT_RPS` | `20`      | Global rate limit in requests per second. `0` or non-numeric values are treated as invalid and fall back to the default. |
 
 ## Build

@@ -1,4 +1,4 @@
-//! pulse: tiny HTTP server that answers `200 ok` so Uptime Kuma can ping it
+//! pulse: tiny HTTP server that answers `200 ok` so a monitor can ping it
 //! and keep a VPS from idling down.
 
 use std::{

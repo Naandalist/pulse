@@ -2,7 +2,8 @@
 name = "pulse"
 version = "0.1.0"
 edition = "2021"
-description = "Tiny HTTP ping target to keep a VPS awake for Uptime Kuma"
+description = "Tiny HTTP ping target to keep a VPS awake for uptime monitoring"
+license = "MIT"
 publish = false
 
 [dependencies]
