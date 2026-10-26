@@ -1,0 +1,19 @@
+[package]
+name = "pulse"
+version = "0.1.0"
+edition = "2021"
+description = "Tiny HTTP ping target to keep a VPS awake for Uptime Kuma"
+publish = false
+
+[dependencies]
+axum = "0.8.9"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net", "signal", "time"] }
+tower = { version = "0.5.3", features = ["limit", "util"] }
+tower-http = { version = "0.7.1", features = ["limit", "timeout"] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+codegen-units = 1
+panic = "abort"

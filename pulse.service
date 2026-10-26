@@ -1,0 +1,39 @@
+[Unit]
+Description=Pulse - tiny HTTP ping target for Uptime Kuma
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pulse
+Group=pulse
+Environment=PORT=8080
+Environment=HEALTH_PATH=/health
+Environment=RATE_LIMIT_RPS=20
+ExecStart=/usr/local/bin/pulse
+Restart=always
+RestartSec=2
+
+# Hardening
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectHostname=true
+ProtectClock=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+CapabilityBoundingSet=
+SystemCallArchitectures=native
+UMask=0077
+LimitNOFILE=1024
+MemoryMax=64M
+
+[Install]
+WantedBy=multi-user.target
